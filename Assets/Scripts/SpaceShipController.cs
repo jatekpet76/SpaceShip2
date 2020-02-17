@@ -20,8 +20,12 @@ public class SpaceShipController : MonoBehaviour
     void Update()
     {
         CalculateMovement();
+        Shoot();
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+    void Shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
             Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
         }
