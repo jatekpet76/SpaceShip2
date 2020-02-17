@@ -23,4 +23,12 @@ public class BulletController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }
